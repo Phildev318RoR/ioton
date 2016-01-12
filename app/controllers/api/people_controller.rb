@@ -3,7 +3,7 @@ class API::PeopleController < ApplicationController
   skip_before_filter :authenticate_people! # we do not need devise authentication here
   before_filter :fetch_people, :except => [:index, :create]
   skip_before_action :verify_authenticity_token
-  
+
   #before_action :authenticate
 
   def fetch_people
@@ -27,7 +27,7 @@ class API::PeopleController < ApplicationController
   def create
     @people = People.new(params[:people])
     respond_to do |format|
-      format.json { render :json => @people }
+      #format.json { render :json => @people }
       if @people.save
         format.json { render json: @people, status: :created }
       else
