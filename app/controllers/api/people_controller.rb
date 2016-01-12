@@ -26,6 +26,7 @@ class API::PeopleController < ApplicationController
   def create
     @people = People.new(params[:people])
     respond_to do |format|
+      format.json { render :json => @people }
       if @people.save
         format.json { render json: @people, status: :created }
       else
