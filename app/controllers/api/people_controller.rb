@@ -26,16 +26,25 @@ class API::PeopleController < ApplicationController
   end
 
   def create
-    @people = People.new(params[:people])
-    @people.name = params[:people].name
+    @people = People.new(person_params)
+
     respond_to do |format|
       format.json { render :json => @people }
-      #if @people.save
-      #  format.json { render json: @people, status: :created }
-      #else
-      #  format.json { render json: @people.errors, status: :unprocessable_entity }
-      #end
+      if @people.save
+        format.json { render json: @people, status: :created }
+      else
+        format.json { render json: @people.errors, status: :unprocessable_entity }
+      end
     end
   end
+
+  private
+    # Using a private method to encapsulate the permissible parameters
+    # is just a good pattern since you'll be able to reuse the same
+    # permit list between create and update. Also, you can specialize
+    # this method with per-user checking of permissible attributes.
+    def person_params
+      params.require(:people).permit(:name, :surname)
+    end
 
 end
