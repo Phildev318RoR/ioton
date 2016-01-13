@@ -8,7 +8,7 @@ class API::PeopleController < ApplicationController
 
 
   def fetch_people
-    @people = People.find_by_id(params[:id])
+    @people = People.first #(params[:id])
   end
 
   def index
