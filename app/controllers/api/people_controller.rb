@@ -1,7 +1,7 @@
 class API::PeopleController < ApplicationController
-  #http_basic_authenticate_with :name => "myIoToN", :password => "ioton123"
-  #skip_before_filter :authenticate_people! # we do not need devise authentication here
-  #before_filter :fetch_people, :except => [:index, :create]
+  http_basic_authenticate_with :name => "myIoToN", :password => "ioton123"
+  skip_before_filter :authenticate_people! # we do not need devise authentication here
+  before_filter :fetch_people, :except => [:index, :create]
   #skip_before_action :verify_authenticity_token
 
   #before_action :authenticate
