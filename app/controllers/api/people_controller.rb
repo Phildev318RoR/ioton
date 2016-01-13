@@ -19,7 +19,7 @@ class API::PeopleController < ApplicationController
   end
 
   def show
-    @people = People.find(params[:id])
+    #@people = People.find(params[:id])
     respond_to do |format|
       format.json { render :json => @people }
     end
