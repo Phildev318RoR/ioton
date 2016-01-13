@@ -26,12 +26,7 @@ class API::PeopleController < ApplicationController
   end
 
   def create
-    if @people.present?
-      render nothing: true, status: :conflict
-    else
-      @people = People.new
-      @people.assign_attributes(@json['people']
-    #@people = People.new(params[:people])
+    @people = People.new(params[:people])
 
     respond_to do |format|
       format.json { render :json => @people }
