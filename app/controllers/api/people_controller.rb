@@ -27,7 +27,7 @@ class API::PeopleController < ApplicationController
 
   def create
     #@people = People.new(params[:person])
-    @people = People.new(name: params[:name])
+    @people = People.new(name: params[:name], surname: params[:surname])
 
     respond_to do |format|
       format.json { render :json => @people }
