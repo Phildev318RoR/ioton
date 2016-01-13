@@ -26,14 +26,15 @@ class API::PeopleController < ApplicationController
   end
 
   def create
-    @people = People.new(params[:person])
+    #@people = People.new(params[:person])
+    @people = People.new(name: params[:name])
 
     respond_to do |format|
       format.json { render :json => @people }
       if @people.save
-        @people.name = "tester"
-        @people.surname = "baby"
-        @people.save
+        #@people.name = "tester"
+        #@people.surname = "baby"
+        #@people.save
         format.json { render json: @people, status: :created }
       else
         format.json { render json: @people.errors, status: :unprocessable_entity }
