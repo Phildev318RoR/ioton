@@ -49,17 +49,17 @@ class API::PeopleController < ApplicationController
       if @people.save
         format.json { head :no_content, status: :ok }
       else
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        format.json { render json: @people.errors, status: :unprocessable_entity }
       end
     end
   end
 
   def destroy
     respond_to do |format|
-      if @user.destroy
+      if @people.destroy
         format.json { head :no_content, status: :ok }
       else
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        format.json { render json: @people.errors, status: :unprocessable_entity }
       end
     end
   end
