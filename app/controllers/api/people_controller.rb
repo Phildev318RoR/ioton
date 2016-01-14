@@ -1,6 +1,6 @@
 class API::PeopleController < ApplicationController
   http_basic_authenticate_with :name => "myIoToN", :password => "ioton123"
-  #skip_before_filter :authenticate_people! # we do not need devise authentication here
+  skip_before_filter :authenticate_people! # we do not need devise authentication here
   before_filter :fetch_people, :except => [:index, :create]
   #skip_before_action :verify_authenticity_token
 
@@ -54,4 +54,13 @@ class API::PeopleController < ApplicationController
     end
   end
 
+  def destroy
+    respond_to do |format|
+      if @user.destroy
+        format.json { head :no_content, status: :ok }
+      else
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 end
