@@ -43,8 +43,10 @@ class API::PeopleController < ApplicationController
   end
 
   def update
+    @people.name = params[:name]
+    @people.surname = params[:surname]
     respond_to do |format|
-      if @people.update_attributes(params[:people])
+      if @people.save
         format.json { head :no_content, status: :ok }
       else
         format.json { render json: @user.errors, status: :unprocessable_entity }
