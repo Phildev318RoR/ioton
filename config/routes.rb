@@ -60,6 +60,7 @@ Rails.application.routes.draw do
 
   resources :clients
   resources :departments
+  resources :sites
   namespace :api, :defaults => {:format => 'json'} do
     resources :people
   end

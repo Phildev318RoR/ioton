@@ -11,6 +11,7 @@ class DepartmentsController < ApplicationController
     @department.client_id = session[:client_id]
     @department.downloaded = false
     if @department.save
+      session[:department_id] = @department.id
       flash[:notice] = "department was successfully created"
       redirect_to departments_path
     else
@@ -24,12 +25,16 @@ class DepartmentsController < ApplicationController
 
   def show
     @client = Client.find(session[:client_id])
-    @department = @client.departments
+    @department = Department.find(params[:id])
+    #@department = @departments.find
+    session[:department_id] = @department.id
+    redirect_to sites_path
   end
 
   def edit
     @client = Client.find(session[:client_id])
     @department = Department.find(params[:id])
+    session[:department_id] = @department.id
   end
 
   def update
@@ -37,6 +42,7 @@ class DepartmentsController < ApplicationController
     @department = Department.find(params[:id])
     @department.downloaded = false
     if @department.update(department_params)
+      session[:department_id] = @department.id
       flash[:notice] = "department was successfully updated"
       redirect_to departments_path
     else
@@ -47,6 +53,7 @@ class DepartmentsController < ApplicationController
   def destroy
     @department = Department.find(params[:id])
     @department.destroy
+    session[:department_id] = nill
     flash[:notice] = "department was successfully deleted"
     redirect_to departments_path
   end

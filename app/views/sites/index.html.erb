@@ -1,0 +1,60 @@
+<div class="panel panel-default">
+	<div class="panel-heading"><h2>Client: <%= @client.name %> Department: <%= @department.name %></h2></div>
+	<div class="panel-body">
+		<p>
+		  <%= link_to "Create new Site", new_site_path, class: "btn btn-xs btn-success" %>
+		</p>
+		<div class="panel panel-primary">
+			<!-- Default panel contents -->
+			<div class="panel-heading"><h1>Listing all Sites</h1></div>
+			<table class="table">
+			  <tr>
+
+				<th>id</th>
+
+				<th>name</th>
+
+				<th>description</th>
+
+				<th>contact_person</th>
+
+				<th>contact_phone</th>
+
+				<th>address1</th>
+
+				<th>address2</th>
+
+				<th>address3</th>
+
+				<th>downloaded</th>
+
+			  </tr>
+			  <% @sites.each do |site| %>
+				<tr>
+
+				  <td><%= site.id %></td>
+
+				  <td><%= site.name %></td>
+
+				  <td><%= site.description %></td>
+
+				  <td><%= site.contact_person %></td>
+
+				  <td><%= site.contact_phone %></td>
+
+				  <td><%= site.address1 %></td>
+
+				  <td><%= site.address2 %></td>
+
+				  <td><%= site.address3 %></td>
+
+				  <td><%= site.downloaded %></td>
+
+				  <td><%= link_to 'Edit', edit_site_path(site), class: "btn btn-xs btn-primary" %> </td>
+				  <td><%= link_to 'Delete', site_path(site), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-xs btn-danger" %></td>
+				  <td><%= link_to '{child}', site_path(site), class: "btn btn-xs btn-warning"  %> </td>
+				</tr>
+			  <% end %>
+			</table>
+	</div>
+</div>

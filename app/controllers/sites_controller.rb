@@ -1,12 +1,13 @@
 class SitesController < ApplicationController
   #before_action :set_Sites, only: [:edit, :update, :show, :destroy]
   def new
-	  @department = Departments.find(session[:department_id])
-    @site = Sites.new
+    @client = Client.find(session[:client_id])
+	  @department = Department.find(session[:department_id])
+    @site = Site.new
   end
 
   def create
-    @site = Sites.new(site_params)
+    @site = Site.new(site_params)
 	  @site.department_id = session[:department_id]
     @site.downloaded = false
     if @site.save
@@ -22,19 +23,21 @@ class SitesController < ApplicationController
   end
 
   def show
-	  @departments = Departments.find(session[:department_id])
-    @site = Sites.find(params[])
+    @client = Client.find(session[:client_id])
+	  @department = Department.find(session[:department_id])
+    @site = Site.find(params[:id])
   end
 
   def edit
-	@departments = Departments.find(session[:department_id])
-    @site = Sites.find(params[])
+    @client = Client.find(session[:client_id])
+	  @department = Department.find(session[:department_id])
+    @site = Site.find(params[:id])
   end
 
   def update
-	@departments = Departments.find(session[:department_id])
-    @site = Sites.find(params[])
-	@site.downloaded = false
+	  @department = Department.find(session[:department_id])
+    @site = Site.find(params[:id])
+	  @site.downloaded = false
     if @site.update(site_params)
       flash[:notice] = "Site was successfully updated"
       redirect_to sites_path
@@ -44,7 +47,7 @@ class SitesController < ApplicationController
   end
 
   def destroy
-    @site = Sites.find(params[])
+    @site = Site.find(params[:id])
     @site.destroy
     flash[:notice] = "Site was successfully deleted"
     redirect_to sites_path
@@ -52,8 +55,9 @@ class SitesController < ApplicationController
 
 
   def index
-	@departments = Departments.find(session[:department_id])
-    @Sites = @departments.Sites
+    @client = Client.find(session[:client_id])
+	  @department = Department.find(session[:department_id])
+    @sites = @department.sites
   end
 
 
