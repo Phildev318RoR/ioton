@@ -1,5 +1,29 @@
+$navbar-default-bg: #2C8ED4;
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+#logo{
+  float: left;
+  font-size: 1.7em;
+  color: #fff;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+.navbar-nav{
+  font-size: 1.3em;
+  color: #fff;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+.dropdown-menu{
+  font-size: 1.3em;
+  color: #fff;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
 
 body {
   padding-top: 20px;
@@ -98,4 +122,24 @@ img{
     padding-right: 0;
     padding-left: 0;
   }
+}
+
+.footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+}
+
+.footer a:hover {
+  color: #222;
+}
+
+.footer small {
+  float: left;
+}
+
+.footer ul {
+  float: right;
+  list-style: none;
 }

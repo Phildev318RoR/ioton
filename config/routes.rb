@@ -57,6 +57,9 @@ Rails.application.routes.draw do
 
   get 'pages/home', to: 'pages#home'
   get 'pages/about', to: 'pages#about'
+
+  resources :clients
+  resources :departments
   namespace :api, :defaults => {:format => 'json'} do
     resources :people
   end

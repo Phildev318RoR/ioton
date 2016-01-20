@@ -1,0 +1,25 @@
+<div class="panel panel-primary">
+  <!-- Default panel contents -->
+  <div class="panel-heading"><h1>Showing selected @client</h1></div>
+  <p>
+  Title: <%= @client.name %>
+</p>
+
+<p>
+  Title: <%= @client.decription %>
+</p>
+
+<p>
+  Title: <%= @client.contact_person %>
+</p>
+
+<p>
+  Title: <%= @client.contact_phone %>
+</p>
+
+<p>
+  Title: <%= @client.downloaded %>
+</p>
+
+<%= link_to "Edit this client", edit_client_path(@client) %> |
+</div>

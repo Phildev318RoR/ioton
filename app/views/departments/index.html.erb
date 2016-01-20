@@ -1,0 +1,46 @@
+<div class="panel panel-default">
+  <div class="panel-heading"><h2>Client: <%= @client.name %></h2></div>
+  <div class="panel-body">
+    <p>
+   <%= link_to "Create new department", new_department_path , class: "btn btn-xs btn-success" %>
+</p>
+<div class="panel panel-primary">
+  <!-- Default panel contents -->
+  <div class="panel-heading"><h1>Listing all Departments</h1></div>
+
+  <!-- Table -->
+  <table class="table">
+  <tr>
+
+    <th>name</th>
+
+    <th>description</th>
+
+    <th>downloaded</th>
+
+    <th>client_id</th>
+
+  </tr>
+  <% @departments.each do |department| %>
+    <tr>
+
+      <td><%= department.name %></td>
+
+      <td><%= department.description %></td>
+
+      <td><%= department.downloaded %></td>
+
+      <td><%= department.client_id %></td>
+
+      <td><%= link_to 'Edit', edit_department_path(department), class: "btn btn-xs btn-primary" %> </td>
+      <td><%= link_to 'Delete', department_path(department), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-xs btn-danger" %></td>
+      <td><%= link_to 'Sites', department_path(department), class: "btn btn-xs btn-warning"  %> </td>
+    </tr>
+  <% end %>
+</table>
+
+</div>
+  </div>
+</div>
+
+

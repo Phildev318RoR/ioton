@@ -1,0 +1,24 @@
+<div class="panel panel-primary">
+  <!-- Default panel contents -->
+  <div class="panel-heading"><h1>Showing selected @department</h1></div>
+  <h1>Showing selected department</h1>
+
+<p>
+  Title: <%= @department.name %>
+</p>
+
+<p>
+  Title: <%= @department.description %>
+</p>
+
+<p>
+  Title: <%= @department.downloaded %>
+</p>
+
+<p>
+  Title: <%= @department.client_id %>
+</p>
+
+<%= link_to "Edit this departments$", edit_department_path(@department), class: "btn btn-xs btn-primary" %> |
+<%= link_to "Back to departments listing", departments_path, class: "btn btn-xs btn-success" %>
+</div>

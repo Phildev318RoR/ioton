@@ -1,0 +1,44 @@
+<p>
+  <%= link_to "Create new Clients", new_client_path, class: "btn btn-xs btn-success" %>
+</p>
+<div class="panel panel-primary">
+  <!-- Default panel contents -->
+  <div class="panel-heading"><h1>Listing all Client</h1></div>
+
+  <!-- Table -->
+  <table class="table">
+    <tr>
+
+    <th>name</th>
+
+    <th>decription</th>
+
+    <th>contact_person</th>
+
+    <th>contact_phone</th>
+
+    <th>downloaded</th>
+
+  </tr>
+  <% @client.each do |client| %>
+    <tr>
+
+      <td><%= client.name %></td>
+
+      <td><%= client.decription %></td>
+
+      <td><%= client.contact_person %></td>
+
+      <td><%= client.contact_phone %></td>
+
+      <td><%= client.downloaded %></td>
+
+      <td><%= link_to 'Edit', edit_client_path(client), class: "btn btn-xs btn-primary" %> </td>
+      <td><%= link_to 'Delete', client_path(client), method: :delete, data: {confirm: "Are you sure?"},
+            class: "btn btn-xs btn-danger" %></td>
+      <td><%= link_to 'Departments', client_path(client), class: "btn btn-xs btn-warning"  %></td>
+    </tr>
+  <% end %>
+  </table>
+</div>
+
