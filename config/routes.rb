@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'countries/new'
+
+  get 'staticpages/mychart'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -57,6 +61,7 @@ Rails.application.routes.draw do
 
   get 'pages/home', to: 'pages#home'
   get 'pages/about', to: 'pages#about'
+  get 'pages/client_home', to: 'pages#client_home'
 
   resources :clients
   resources :departments
@@ -64,4 +69,13 @@ Rails.application.routes.draw do
   namespace :api, :defaults => {:format => 'json'} do
     resources :people
   end
+  get 'signup', to: 'users#new'
+  resources :users, except: [:new]
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+  delete 'logout', to: 'sessions#destroy'
+  resources :countries, only: [:new, :create]
+  get '/countries/new', to: 'countries#new'
+  get '/staticpages/mychart',   to: 'staticpages#mychart'
+  get '/staticpages/statchart',   to: 'staticpages#statchart'
 end

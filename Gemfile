@@ -3,11 +3,18 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
+#gem 'rails', '3.2.8'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.3.5'
-
+gem 'soap4r'
+gem 'actionwebservice'
+gem 'bcrypt', '~> 3.1.7'
+gem 'will_paginate', '3.0.7'
+gem 'bootstrap-will_paginate', '0.0.10'
+#gem 'amcharts.rb'
+#gem 'amcharts-rails', '~> 2.7', '>= 2.7.7.1.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
