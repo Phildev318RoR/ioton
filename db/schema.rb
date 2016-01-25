@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160122074349) do
+ActiveRecord::Schema.define(version: 20160125162821) do
 
   create_table "clients", force: :cascade do |t|
     t.string   "name"
@@ -156,6 +156,34 @@ ActiveRecord::Schema.define(version: 20160122074349) do
     t.datetime "updated_at"
   end
 
+  create_table "permissions", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "permissionviewroles", force: :cascade do |t|
+    t.integer  "permissionview_id"
+    t.integer  "role_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  create_table "permissionviews", force: :cascade do |t|
+    t.integer  "permission_id"
+    t.integer  "viewmenu_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "roles", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "rules", force: :cascade do |t|
     t.string   "name"
     t.string   "decription"
@@ -182,6 +210,13 @@ ActiveRecord::Schema.define(version: 20160122074349) do
     t.integer  "department_id"
   end
 
+  create_table "userroles", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "role_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "api_key"
     t.datetime "created_at",      null: false
@@ -197,6 +232,13 @@ ActiveRecord::Schema.define(version: 20160122074349) do
     t.boolean  "downloaded"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "viewmenus", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "workflows", force: :cascade do |t|

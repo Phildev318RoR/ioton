@@ -1,0 +1,25 @@
+<%= form_for(@permissionview) do |f| %>
+  <% if @permissionview.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@permissionview.errors.count, "error") %> prohibited this permissionview from being saved:</h2>
+
+      <ul>
+      <% @permissionview.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :permission_id %><br>
+    <%= f.number_field :permission_id %>
+  </div>
+  <div class="field">
+    <%= f.label :viewmenu_id %><br>
+    <%= f.number_field :viewmenu_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

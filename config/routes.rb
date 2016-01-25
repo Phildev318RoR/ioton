@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :userroles
+  resources :permissionviewroles
+  resources :permissionviews
+  resources :permissions
+  resources :viewmenus
+  resources :roles
   get 'countries/new'
 
   get 'staticpages/mychart'
