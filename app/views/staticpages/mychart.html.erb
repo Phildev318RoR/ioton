@@ -1,8 +1,11 @@
 <h1>My amCharts Graph</h1>
 <p>This is my amCharts graph</p>
 <div id="chartdiv" style="width: 100%; height: 400px;"></div>
+<div id="ichartdiv" style="width: 500px; height: 600px;"></div>
+<div id="chartdiv2" style="width: 500px; height: 600px;"></div>
 <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
 <script src="https://www.amcharts.com/lib/3/serial.js"></script>
+<script src="https://www.amcharts.com/lib/3/pie.js"></script>
 <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
 <script type="text/javascript">
             var chart;
@@ -34,4 +37,45 @@
 
                 chart.write("chartdiv");
             });
+
+            var chart1 = AmCharts.makeChart("ichartdiv", {
+    "type": "pie",
+    "theme": "light",
+    "innerRadius": "40%",
+    "gradientRatio": [-0.4, -0.4, -0.4, -0.4, -0.4, -0.4, 0, 0.1, 0.2, 0.1, 0, -0.2, -0.5],
+    "dataProvider": chartData,
+    "balloonText": "[[value]]",
+    "valueField": "visits",
+    "titleField": "country",
+    "balloon": {
+        "drop": true,
+        "adjustBorderColor": false,
+        "color": "#FFFFFF",
+        "fontSize": 16
+    },
+    "export": {
+        "enabled": true
+    }
+});
+
+
+        var chart2;
+
+        AmCharts.ready(function () {
+            // PIE CHART
+            chart2 = new AmCharts.AmPieChart();
+            chart2.dataProvider = chartData;
+            chart2.titleField = "country";
+            chart2.valueField = "visits";
+            chart2.outlineColor = "#FFFFFF";
+            chart2.outlineAlpha = 0.8;
+            chart2.outlineThickness = 2;
+            // this makes the chart 3D
+            chart2.depth3D = 15;
+            chart2.angle = 30;
+
+            // WRITE
+            chart2.write("chartdiv2");
+        });
+
         </script>

@@ -1,7 +1,7 @@
 <div class="container">
 
   <!-- The justified navigation menu is meant for single line per list item.
-Multiple lines will require custom code not provided by Bootstrap. 
+Multiple lines will require custom code not provided by Bootstrap.
   <div class="masthead">
     <h3 class="text-muted">ioToN</h3>
     <nav>
@@ -18,7 +18,17 @@ Multiple lines will require custom code not provided by Bootstrap.
   <div class="jumbotron">
     <div class="row">
       <div class="col-md-4">
-        <%= image_tag 'computer-icon (1).png' %>
+        <!--<%= image_tag 'computer-icon (1).png' %>-->
+        <div id="view" style="width:160px; height:160px; margin:80px auto 0 auto;">
+            <div id="box">
+                <div class="one">I</div>
+                <div class="two">$</div>
+                <div class="three">T</div>
+                <div class="four">O</div>
+                <div class="five">N</div>
+                <div class="six">O</div>
+            </div>
+        </div>
       </div>
       <div class="col-md-8">
         <h1>internet of Things oriented Network</h1>
@@ -50,9 +60,74 @@ Multiple lines will require custom code not provided by Bootstrap.
 
 </div> <!-- /container -->
 
+<style type="text/css">
 
+  #box div
+  {
+    position: absolute;
+    height: 160px;
+    width: 160px;
+    border: 3px solid #000;
+    background: rgba(255,200,100,0.8);
+    text-align: center;
+    font-size: 130px;
+  }
+
+  #box
+  {
+    -webkit-animation-name: animation;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 3s;
+    margin:80;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform-origin: 80px 80px 0;
+  }
+
+  #box .one
+  {
+    -webkit-transform: translateZ(80px);
+  }
+  #box .two
+  {
+    -webkit-transform: rotateX(-90deg) translateZ(80px);
+  }
+  #box .three
+  {
+    -webkit-transform: rotateY(90deg) rotateX(90deg) translateZ(80px);
+  }
+  #box .four
+  {
+    -webkit-transform: rotateY(180deg) rotateZ(90deg) translateZ(80px);
+  }
+  #box .five
+  {
+    -webkit-transform: rotateY(-90deg) rotateZ(90deg) translateZ(80px);
+  }
+  #box .six
+  {
+    -webkit-transform: rotateY(90deg) translateZ(80px);
+  }
+
+  @-webkit-keyframes animation
+  {
+    from,to{}
+    16% { -webkit-transform: rotateY(-90deg);}
+    33% { -webkit-transform: rotateY(-90deg) rotateZ(135deg);}
+    50% { -webkit-transform: rotateY(225deg) rotateZ(135deg);}
+    66% { -webkit-transform: rotateY(135deg) rotateX(135deg);}
+    83% { -webkit-transform: rotateX(135deg);}
+  }
+</style>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+<script type="text/javascript">
+  function init()
+  {
+    document.addEventListener("touchstart", function(event){event.preventDefault();}, false);
+  }
+  window.onLoad = init();
+</script>
 <div class="center jumbotron">
   <h1>Internet of things oriented network</h1>
   <%= link_to "About", pages_about_path, class: "btn btn-danger btn-lg btn-xlarge" %>
