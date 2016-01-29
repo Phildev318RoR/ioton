@@ -1,14 +1,34 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @userrole.user_id %>
-</p>
+<div class="panel panel-default">
+  <div class="panel-heading">Management Console</div>
+    <div class="panel-body">
+      <div class="panel panel-primary">
+        <!-- Default panel contents -->
+        <div class="panel-heading"><h1>Showing selected userrole</h1></div>
+          <br>
+          <p>
+            <strong>id:</strong> <%= @userrole.id %>
+          </p>
 
-<p>
-  <strong>Role:</strong>
-  <%= @userrole.role_id %>
-</p>
+          <p>
+            <strong>User Name:</strong> <%= @userrole.user.username %>
+          </p>
 
-<%= link_to 'Edit', edit_userrole_path(@userrole) %> |
-<%= link_to 'Back', userroles_path %>
+          <p>
+            <strong>Role Name:</strong> <%= @userrole.role.name %>
+          </p>
+
+          <p>
+            <strong>Created:</strong> <%= @userrole.created_at %>
+          </p>
+
+          <p>
+            <strong>Updated:</strong> <%= @userrole.updated_at %>
+          </p>
+
+          <%= link_to "Edit this userrole", edit_userrole_path(@userrole) %> |
+          <%= link_to "Back to userroles listing", userroles_path %>
+
+      </div>
+    </div>
+</div>

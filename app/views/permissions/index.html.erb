@@ -1,29 +1,36 @@
-<p id="notice"><%= notice %></p>
+<div class="panel panel-default">
+	<div class="panel-heading"><h2>Management Console</h2></div>
+	<div class="panel-body">
+		<p>
+		  <%= link_to "Create new permission", new_permission_path, class: "btn btn-xs btn-success" %>
+		</p>
+		<div class="panel panel-primary">
+			<!-- Default panel contents -->
+			<div class="panel-heading"><h1>Listing all permissions</h1></div>
+			<table class="table">
+			  <tr>
 
-<h1>Listing Permissions</h1>
+				<th>id</th>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+				<th>name</th>
 
-  <tbody>
-    <% @permissions.each do |permission| %>
-      <tr>
-        <td><%= permission.name %></td>
-        <td><%= permission.description %></td>
-        <td><%= link_to 'Show', permission %></td>
-        <td><%= link_to 'Edit', edit_permission_path(permission) %></td>
-        <td><%= link_to 'Destroy', permission, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+				<th>description</th>
 
-<br>
+			  </tr>
+			  <% @permissions.each do |permission| %>
+				<tr>
 
-<%= link_to 'New Permission', new_permission_path %>
+				  <td><%= permission.id %></td>
+
+				  <td><%= permission.name %></td>
+
+				  <td><%= permission.description %></td>
+
+				  <td><%= link_to 'Edit', edit_permission_path(permission), class: "btn btn-xs btn-primary" %> </td>
+				  <td><%= link_to 'Delete', permission_path(permission), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-xs btn-danger" %></td>
+				  <td><%= link_to 'Show', permission_path(permission), class: "btn btn-xs btn-warning"  %> </td>
+				</tr>
+			  <% end %>
+			</table>
+	</div>
+</div>

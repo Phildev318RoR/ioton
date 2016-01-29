@@ -1,29 +1,44 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Roles</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @roles.each do |role| %>
-      <tr>
-        <td><%= role.name %></td>
-        <td><%= role.description %></td>
-        <td><%= link_to 'Show', role %></td>
-        <td><%= link_to 'Edit', edit_role_path(role) %></td>
-        <td><%= link_to 'Destroy', role, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Role', new_role_path %>
+<div class="panel panel-default">
+	<div class="panel-heading"><h2></h2></div>
+	<div class="panel-body">
+		<p>
+		  <%= link_to "Create new role", new_role_path, class: "btn btn-xs btn-success" %>
+		</p>
+		<div class="panel panel-primary">
+			<!-- Default panel contents -->
+			<div class="panel-heading"><h1>Listing all roles</h1></div>
+			<table class="table">
+			  <tr>
+			  
+				<th>id</th>
+				
+				<th>name</th>
+				
+				<th>description</th>
+				
+				<th>created_at</th>
+				
+				<th>updated_at</th>
+				
+			  </tr>
+			  <% @roles.each do |role| %>
+				<tr>
+				
+				  <td><%= role.id %></td>
+				  
+				  <td><%= role.name %></td>
+				  
+				  <td><%= role.description %></td>
+				  
+				  <td><%= role.created_at %></td>
+				  
+				  <td><%= role.updated_at %></td>
+				  
+				  <td><%= link_to 'Edit', edit_role_path(role), class: "btn btn-xs btn-primary" %> </td>
+				  <td><%= link_to 'Delete', role_path(role), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-xs btn-danger" %></td>
+				  <td><%= link_to '{child}', role_path(role), class: "btn btn-xs btn-warning"  %> </td>
+				</tr>
+			  <% end %>
+			</table>
+	</div>
+</div>

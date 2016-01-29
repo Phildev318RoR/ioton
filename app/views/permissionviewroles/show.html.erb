@@ -1,14 +1,34 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Permissionview:</strong>
-  <%= @permissionviewrole.permissionview_id %>
-</p>
+<div class="panel panel-default">
+  <div class="panel-heading">Management Console</div>
+    <div class="panel-body">
+      <div class="panel panel-primary">
+        <!-- Default panel contents -->
+        <div class="panel-heading"><h1>Showing selected permissionviewrole</h1></div>
+          <br>
+          <p>
+            <strong>id:</strong> <%= @permissionviewrole.id %>
+          </p>
 
-<p>
-  <strong>Role:</strong>
-  <%= @permissionviewrole.role_id %>
-</p>
+          <p>
+            <strong>permissionview_id:</strong> <%= @permissionviewrole.permissionview.name %>
+          </p>
 
-<%= link_to 'Edit', edit_permissionviewrole_path(@permissionviewrole) %> |
-<%= link_to 'Back', permissionviewroles_path %>
+          <p>
+            <strong>role_id:</strong> <%= @permissionviewrole.role.name %>
+          </p>
+
+          <p>
+            <strong>created_at:</strong> <%= @permissionviewrole.created_at %>
+          </p>
+
+          <p>
+            <strong>updated_at:</strong> <%= @permissionviewrole.updated_at %>
+          </p>
+
+          <%= link_to "Edit this permissionviewrole", edit_permissionviewrole_path(@permissionviewrole) %> |
+          <%= link_to "Back to permissionviewroles listing", permissionviewroles_path %>
+
+      </div>
+    </div>
+</div>

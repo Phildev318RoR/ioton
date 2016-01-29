@@ -10,15 +10,21 @@ class PermissionviewrolesController < ApplicationController
   # GET /permissionviewroles/1
   # GET /permissionviewroles/1.json
   def show
+    @permissionviews = Permissionview.all
+    @roles = Role.all
   end
 
   # GET /permissionviewroles/new
   def new
     @permissionviewrole = Permissionviewrole.new
+    @permissionviews = Permissionview.all
+    @roles = Role.all
   end
 
   # GET /permissionviewroles/1/edit
   def edit
+    @permissionviews = Permissionview.all
+    @roles = Role.all
   end
 
   # POST /permissionviewroles

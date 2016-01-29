@@ -1,14 +1,35 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @permission.name %>
-</p>
+<div class="panel panel-default">
+  <div class="panel-heading">Management Console</div>
+    <div class="panel-body">
+      <div class="panel panel-primary">
+        <!-- Default panel contents -->
+        <div class="panel-heading"><h1>Showing selected permission</h1></div>
+          <br>
 
-<p>
-  <strong>Description:</strong>
-  <%= @permission.description %>
-</p>
+          <p>
+            <strong>id:</strong> <%= @permission.id %>
+          </p>
 
-<%= link_to 'Edit', edit_permission_path(@permission) %> |
-<%= link_to 'Back', permissions_path %>
+          <p>
+            <strong>Name:</strong> <%= @permission.name %>
+          </p>
+
+          <p>
+            <strong>Description:</strong>: <%= @permission.description %>
+          </p>
+
+          <p>
+            <strong>Created:</strong> <%= @permission.created_at %>
+          </p>
+
+          <p>
+            <strong>Updated:</strong> <%= @permission.updated_at %>
+          </p>
+
+          <%= link_to "Edit this permission", edit_permission_path(@permission) %> |
+          <%= link_to "Back to permissions listing", permissions_path %>
+
+      </div>
+    </div>
+</div>

@@ -15,10 +15,14 @@ class UserrolesController < ApplicationController
   # GET /userroles/new
   def new
     @userrole = Userrole.new
+    @users = User.all
+    @roles = Role.all
   end
 
   # GET /userroles/1/edit
   def edit
+    @users = User.all
+    @roles = Role.all
   end
 
   # POST /userroles

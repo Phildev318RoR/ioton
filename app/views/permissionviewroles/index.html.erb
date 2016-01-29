@@ -1,29 +1,36 @@
-<p id="notice"><%= notice %></p>
+<div class="panel panel-default">
+	<div class="panel-heading"><h2>Management Console</h2></div>
+	<div class="panel-body">
+		<p>
+		  <%= link_to "Create new permissionviewrole", new_permissionviewrole_path, class: "btn btn-xs btn-success" %>
+		</p>
+		<div class="panel panel-primary">
+			<!-- Default panel contents -->
+			<div class="panel-heading"><h1>Listing all permissionviewroles</h1></div>
+			<table class="table">
+			  <tr>
 
-<h1>Listing Permissionviewroles</h1>
+				<th>id</th>
 
-<table>
-  <thead>
-    <tr>
-      <th>Permissionview</th>
-      <th>Role</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+				<th>permissionview</th>
 
-  <tbody>
-    <% @permissionviewroles.each do |permissionviewrole| %>
-      <tr>
-        <td><%= permissionviewrole.permissionview_id %></td>
-        <td><%= permissionviewrole.role_id %></td>
-        <td><%= link_to 'Show', permissionviewrole %></td>
-        <td><%= link_to 'Edit', edit_permissionviewrole_path(permissionviewrole) %></td>
-        <td><%= link_to 'Destroy', permissionviewrole, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+				<th>role</th>
 
-<br>
+			  </tr>
+			  <% @permissionviewroles.each do |permissionviewrole| %>
+				<tr>
 
-<%= link_to 'New Permissionviewrole', new_permissionviewrole_path %>
+				  <td><%= permissionviewrole.id %></td>
+
+          <td><%= permissionviewrole.permissionview.name %></td>
+
+          <td><%= permissionviewrole.role.name %></td>
+
+				  <td><%= link_to 'Edit', edit_permissionviewrole_path(permissionviewrole), class: "btn btn-xs btn-primary" %> </td>
+				  <td><%= link_to 'Delete', permissionviewrole_path(permissionviewrole), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-xs btn-danger" %></td>
+				  <td><%= link_to 'Show', permissionviewrole_path(permissionviewrole), class: "btn btn-xs btn-warning"  %> </td>
+				</tr>
+			  <% end %>
+			</table>
+	</div>
+</div>

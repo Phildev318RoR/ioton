@@ -1,14 +1,35 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @viewmenu.name %>
-</p>
+<div class="panel panel-default">
+  <div class="panel-heading">Management Console</div>
+    <div class="panel-body">
+      <div class="panel panel-primary">
+        <!-- Default panel contents -->
+        <div class="panel-heading"><h1>Showing selected userrole</h1></div>
+          <br>
+          <p>
+            <strong>id:</strong> <%= @viewmenu.id %>
+          </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @viewmenu.description %>
-</p>
+          <p>
+            <strong>name:</strong> <%= @viewmenu.name %>
+          </p>
 
-<%= link_to 'Edit', edit_viewmenu_path(@viewmenu) %> |
-<%= link_to 'Back', viewmenus_path %>
+          <p>
+            <strong>description:</strong> <%= @viewmenu.description %>
+          </p>
+
+          <p>
+            <strong>created_at:</strong> <%= @viewmenu.created_at %>
+          </p>
+
+          <p>
+            <strong>updated_at:</strong> <%= @viewmenu.updated_at %>
+          </p>
+
+          <%= link_to "Edit this viewmenu", edit_viewmenu_path(@viewmenu) %> |
+          <%= link_to "Back to viewmenus listing", viewmenus_path %>
+
+
+      </div>
+    </div>
+</div>

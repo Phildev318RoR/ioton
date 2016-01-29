@@ -1,25 +1,43 @@
-<%= form_for(@role) do |f| %>
-  <% if @role.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@role.errors.count, "error") %> prohibited this role from being saved:</h2>
-
-      <ul>
-      <% @role.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+<% if @role.errors.any? %>
+  <h2>The following errors prevented the node_type from getting created</h2>
+  <ul>
+  <% @role.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
   <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  </ul>
 <% end %>
+<div class='row'>
+  <div class='col-xs-12'>
+    <%= form_for(@role, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+	(
+
+      <div class="form-group">
+        <div class="control-label col-sm-2">
+          <%= f.label :name %>
+        </div>
+        <div class="col-sm-8">
+          <%= f.text_field:name, class: "form-control", placeholder: "name of role", autofocus: true %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="control-label col-sm-2">
+          <%= f.label :description %>
+        </div>
+        <div class="col-sm-8">
+          <%= f.text_field:description, class: "form-control", placeholder: "description of role", autofocus: true %>
+        </div>
+      </div>
+
+      
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <%= f.submit class: 'btn btn-primary btn-lg' %>
+        </div>
+      </div>
+    <% end %>
+    <div class="col-xs-4 col-xs-offset-4">
+      [ <%= link_to "Cancel request and return to roles listing", roles_path, class: "btn btn-xs btn-success" %> ]
+    </div>
+  </div>
+</div>

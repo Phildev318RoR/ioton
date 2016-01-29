@@ -1,29 +1,37 @@
-<p id="notice"><%= notice %></p>
+<div class="panel panel-default">
+	<div class="panel-heading"><h2>Management Console</h2></div>
+	<div class="panel-body">
+		<p>
+		  <%= link_to "Create new viewmenu", new_viewmenu_path, class: "btn btn-xs btn-success" %>
+		</p>
+		<div class="panel panel-primary">
+			<!-- Default panel contents -->
+			<div class="panel-heading"><h1>Listing all viewmenus</h1></div>
+			<table class="table">
+			  <tr>
 
-<h1>Listing Viewmenus</h1>
+				<th>id</th>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+				<th>name</th>
 
-  <tbody>
-    <% @viewmenus.each do |viewmenu| %>
-      <tr>
-        <td><%= viewmenu.name %></td>
-        <td><%= viewmenu.description %></td>
-        <td><%= link_to 'Show', viewmenu %></td>
-        <td><%= link_to 'Edit', edit_viewmenu_path(viewmenu) %></td>
-        <td><%= link_to 'Destroy', viewmenu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+				<th>description</th>
 
-<br>
 
-<%= link_to 'New Viewmenu', new_viewmenu_path %>
+			  </tr>
+			  <% @viewmenus.each do |viewmenu| %>
+				<tr>
+
+				  <td><%= viewmenu.id %></td>
+
+				  <td><%= viewmenu.name %></td>
+
+				  <td><%= viewmenu.description %></td>
+
+				  <td><%= link_to 'Edit', edit_viewmenu_path(viewmenu), class: "btn btn-xs btn-primary" %> </td>
+				  <td><%= link_to 'Delete', viewmenu_path(viewmenu), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-xs btn-danger" %></td>
+				  <td><%= link_to 'Show', viewmenu_path(viewmenu), class: "btn btn-xs btn-warning"  %> </td>
+				</tr>
+			  <% end %>
+			</table>
+	</div>
+</div>

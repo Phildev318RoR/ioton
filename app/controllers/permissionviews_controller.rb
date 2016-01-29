@@ -10,15 +10,21 @@ class PermissionviewsController < ApplicationController
   # GET /permissionviews/1
   # GET /permissionviews/1.json
   def show
+    @permissions = Permission.all
+    @viewmenus = Viewmenu.all
   end
 
   # GET /permissionviews/new
   def new
     @permissionview = Permissionview.new
+    @permissions = Permission.all
+    @viewmenus = Viewmenu.all
   end
 
   # GET /permissionviews/1/edit
   def edit
+    @permissions = Permission.all
+    @viewmenus = Viewmenu.all
   end
 
   # POST /permissionviews
@@ -69,6 +75,6 @@ class PermissionviewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def permissionview_params
-      params.require(:permissionview).permit(:permission_id, :viewmenu_id)
+      params.require(:permissionview).permit(:name, :permission_id, :viewmenu_id)
     end
 end
