@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @permissionview.name %>
+</p>
+
+<p>
+  <strong>Permission:</strong>
+  <%= @permissionview.permission_id %>
+</p>
+
+<p>
+  <strong>Viewmenu:</strong>
+  <%= @permissionview.viewmenu_id %>
+</p>
+
+<%= link_to 'Edit', edit_permissionview_path(@permissionview) %> |
+<%= link_to 'Back', permissionviews_path %>

@@ -1,0 +1,11 @@
+class CreateIotloginPermissionviews < ActiveRecord::Migration
+  def change
+    create_table :iotlogin_permissionviews do |t|
+      t.string :name
+      t.integer :permission_id
+      t.integer :viewmenu_id
+
+      t.timestamps null: false
+    end
+  end
+end

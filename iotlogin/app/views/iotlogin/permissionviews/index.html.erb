@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Permissionviews</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Permission</th>
+      <th>Viewmenu</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @permissionviews.each do |permissionview| %>
+      <tr>
+        <td><%= permissionview.name %></td>
+        <td><%= permissionview.permission_id %></td>
+        <td><%= permissionview.viewmenu_id %></td>
+        <td><%= link_to 'Show', permissionview %></td>
+        <td><%= link_to 'Edit', edit_permissionview_path(permissionview) %></td>
+        <td><%= link_to 'Destroy', permissionview, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Permissionview', new_permissionview_path %>

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @viewmenu.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @viewmenu.description %>
+</p>
+
+<%= link_to 'Edit', edit_viewmenu_path(@viewmenu) %> |
+<%= link_to 'Back', viewmenus_path %>
