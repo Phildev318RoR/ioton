@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @iotonserver.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @iotonserver.description %>
+</p>
+
+<p>
+  <strong>Site:</strong>
+  <%= @iotonserver.site_id %>
+</p>
+
+<p>
+  <strong>Downloaded:</strong>
+  <%= @iotonserver.downloaded %>
+</p>
+
+<%= link_to 'Edit', edit_iotonserver_path(@iotonserver) %> |
+<%= link_to 'Back', iotonservers_path %>

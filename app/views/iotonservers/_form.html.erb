@@ -1,0 +1,33 @@
+<%= form_for(@iotonserver) do |f| %>
+  <% if @iotonserver.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@iotonserver.errors.count, "error") %> prohibited this iotonserver from being saved:</h2>
+
+      <ul>
+      <% @iotonserver.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :site_id %><br>
+    <%= f.number_field :site_id %>
+  </div>
+  <div class="field">
+    <%= f.label :downloaded %><br>
+    <%= f.check_box :downloaded %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
