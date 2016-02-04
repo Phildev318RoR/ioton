@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160203130251) do
+ActiveRecord::Schema.define(version: 20160204101615) do
 
   create_table "clients", force: :cascade do |t|
     t.string   "name"
@@ -149,16 +149,6 @@ ActiveRecord::Schema.define(version: 20160203130251) do
     t.datetime "updated_at"
   end
 
-  create_table "nodes", force: :cascade do |t|
-    t.integer  "node_type"
-    t.string   "node_name"
-    t.integer  "site_id"
-    t.boolean  "downloaded"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "iotonserver_id"
-  end
-
   create_table "people", force: :cascade do |t|
     t.string   "name"
     t.string   "surname"
@@ -219,6 +209,9 @@ ActiveRecord::Schema.define(version: 20160203130251) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "department_id"
+  end
+
+  create_table "tests", force: :cascade do |t|
   end
 
   create_table "userroles", force: :cascade do |t|

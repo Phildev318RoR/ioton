@@ -1,0 +1,4 @@
+checking build system type... mkdir: cannot create directory '/home/nitrous/tmp/cg1512-32154': No such file or directory
+mkdir: cannot create directory '/home/nitrous/tmp/cg-1512': No such file or directory
+config.guess: cannot create a temporary directory in /home/nitrous/tmp
+configure: error: cannot guess build type; you must specify one

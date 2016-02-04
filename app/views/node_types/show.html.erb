@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @node_type.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @node_type.description %>
+</p>
+
+<p>
+  <strong>Downloaded:</strong>
+  <%= @node_type.downloaded %>
+</p>
+
+<%= link_to 'Edit', edit_node_type_path(@node_type) %> |
+<%= link_to 'Back', node_types_path %>

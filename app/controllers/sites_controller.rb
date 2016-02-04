@@ -26,6 +26,9 @@ class SitesController < ApplicationController
     @client = Client.find(session[:client_id])
 	  @department = Department.find(session[:department_id])
     @site = Site.find(params[:id])
+
+    session[:site_id] = @site.id
+    redirect_to iotonservers_path
   end
 
   def edit

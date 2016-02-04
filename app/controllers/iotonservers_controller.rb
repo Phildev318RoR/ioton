@@ -4,28 +4,47 @@ class IotonserversController < ApplicationController
   # GET /iotonservers
   # GET /iotonservers.json
   def index
+    @client = Client.find(session[:client_id])
+	  @department = Department.find(session[:department_id])
+    @site = Site.find(session[:site_id])
     @iotonservers = Iotonserver.all
   end
 
   # GET /iotonservers/1
   # GET /iotonservers/1.json
   def show
+    @client = Client.find(session[:client_id])
+	  @department = Department.find(session[:department_id])
+    @site = Site.find(session[:site_id])
+
+    #session[:site_id] = @site.id
+    #redirect_to sites_path
   end
 
   # GET /iotonservers/new
   def new
+    @client = Client.find(session[:client_id])
+	  @department = Department.find(session[:department_id])
+    @site = Site.find(session[:site_id])
     @iotonserver = Iotonserver.new
   end
 
   # GET /iotonservers/1/edit
   def edit
+    @client = Client.find(session[:client_id])
+	  @department = Department.find(session[:department_id])
+    @site = Site.find(session[:site_id])
   end
 
   # POST /iotonservers
   # POST /iotonservers.json
   def create
     @iotonserver = Iotonserver.new(iotonserver_params)
-
+    @client = Client.find(session[:client_id])
+	  @department = Department.find(session[:department_id])
+    @site = Site.find(session[:site_id])
+    @iotonserver.downloaded = false
+    @iotonserver.site_id = @site.id
     respond_to do |format|
       if @iotonserver.save
         format.html { redirect_to @iotonserver, notice: 'Iotonserver was successfully created.' }
@@ -40,6 +59,11 @@ class IotonserversController < ApplicationController
   # PATCH/PUT /iotonservers/1
   # PATCH/PUT /iotonservers/1.json
   def update
+    @client = Client.find(session[:client_id])
+	  @department = Department.find(session[:department_id])
+    @site = Site.find(session[:site_id])
+    @iotonserver.downloaded = false
+    @iotonserver.site_id = @site.id
     respond_to do |format|
       if @iotonserver.update(iotonserver_params)
         format.html { redirect_to @iotonserver, notice: 'Iotonserver was successfully updated.' }

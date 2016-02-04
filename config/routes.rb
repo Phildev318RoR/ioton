@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :node_types
+  resources :nodes
   resources :iotonservers
   resources :userroles
   resources :permissionviewroles

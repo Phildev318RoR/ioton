@@ -1,6 +1,10 @@
-<h1>Editing Iotonserver</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @iotonserver %> |
-<%= link_to 'Back', iotonservers_path %>
+<div class="panel panel-default">
+  <div class="panel-heading"><h3>Client: <%= @client.name %> Department: <%= @department.name %> Site: <%= @site.name %></h3></div>
+    <div class="panel-body">
+      <div class="panel panel-primary">
+        <!-- Default panel contents -->
+        <div class="panel-heading"><h1>Edit existing iotonserver</h1></div>
+        <%= render "form" %>
+      </div>
+    </div>
+</div>

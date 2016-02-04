@@ -1,0 +1,40 @@
+<div class="panel panel-default">
+	<div class="panel-heading"><h2>System Configuration</h2></div>
+	<div class="panel-body">
+		<p>
+		  <%= link_to "Create new node_type", new_node_type_path, class: "btn btn-xs btn-success" %>
+		</p>
+		<div class="panel panel-primary">
+			<!-- Default panel contents -->
+			<div class="panel-heading"><h1>Listing all node_types</h1></div>
+			<table class="table">
+			  <tr>
+
+				<th>id</th>
+
+				<th>name</th>
+
+				<th>description</th>
+
+				<th>downloaded</th>
+
+			  </tr>
+			  <% @node_types.each do |node_type| %>
+				<tr>
+
+				  <td><%= node_type.id %></td>
+
+				  <td><%= node_type.name %></td>
+
+				  <td><%= node_type.description %></td>
+
+				  <td><%= node_type.downloaded %></td>
+
+				  <td><%= link_to 'Edit', edit_node_type_path(node_type), class: "btn btn-xs btn-primary" %> </td>
+				  <td><%= link_to 'Delete', node_type_path(node_type), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-xs btn-danger" %></td>
+          <td><%= link_to 'Node Messages', node_type_path(node_type), class: "btn btn-xs btn-warning"  %> </td>
+				</tr>
+			  <% end %>
+			</table>
+	</div>
+</div>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  node_type_id: 1
+  iotonserver_id: 1
+  downloaded: false
+
+two:
+  name: MyString
+  node_type_id: 1
+  iotonserver_id: 1
+  downloaded: false

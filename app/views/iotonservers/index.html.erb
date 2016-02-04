@@ -1,33 +1,40 @@
-<p id="notice"><%= notice %></p>
+<div class="panel panel-default">
+  <div class="panel-heading"><h2>Client: <%= @client.name %> Department: <%= @department.name %> Site: <%= @site.name %></h2></div>
+	<div class="panel-body">
+		<p>
+		  <%= link_to "Create new iotonserver", new_iotonserver_path, class: "btn btn-xs btn-success" %>
+		</p>
+		<div class="panel panel-primary">
+			<!-- Default panel contents -->
+			<div class="panel-heading"><h1>Listing all iotonservers</h1></div>
+			<table class="table">
+			  <tr>
 
-<h1>Listing Iotonservers</h1>
+				<th>id</th>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Site</th>
-      <th>Downloaded</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+				<th>name</th>
 
-  <tbody>
-    <% @iotonservers.each do |iotonserver| %>
-      <tr>
-        <td><%= iotonserver.name %></td>
-        <td><%= iotonserver.description %></td>
-        <td><%= iotonserver.site_id %></td>
-        <td><%= iotonserver.downloaded %></td>
-        <td><%= link_to 'Show', iotonserver %></td>
-        <td><%= link_to 'Edit', edit_iotonserver_path(iotonserver) %></td>
-        <td><%= link_to 'Destroy', iotonserver, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+				<th>description</th>
 
-<br>
+				<th>downloaded</th>
 
-<%= link_to 'New Iotonserver', new_iotonserver_path %>
+			  </tr>
+			  <% @iotonservers.each do |iotonserver| %>
+				<tr>
+
+				  <td><%= iotonserver.id %></td>
+
+				  <td><%= iotonserver.name %></td>
+
+				  <td><%= iotonserver.description %></td>
+
+  			  <td><%= iotonserver.downloaded %></td>
+
+				  <td><%= link_to 'Edit', edit_iotonserver_path(iotonserver), class: "btn btn-xs btn-primary" %> </td>
+				  <td><%= link_to 'Delete', iotonserver_path(iotonserver), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-xs btn-danger" %></td>
+          <td><%= link_to 'IoToN Nodes', iotonserver_path(iotonserver), class: "btn btn-xs btn-warning"  %> </td>
+				</tr>
+			  <% end %>
+			</table>
+	</div>
+</div>

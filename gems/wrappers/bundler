@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+if
+  [[ -s "/home/nitrous/code/rails_projects/ioton/gems/environment" ]]
+then
+  source "/home/nitrous/code/rails_projects/ioton/gems/environment"
+  exec bundler "$@"
+else
+  echo "ERROR: Missing RVM environment file: '/home/nitrous/code/rails_projects/ioton/gems/environment'" >&2
+  exit 1
+fi

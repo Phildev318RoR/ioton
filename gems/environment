@@ -1,0 +1,3 @@
+export PATH="/usr/local/opt/rbenv/versions/2.2.1/bin:/usr/local/opt/rbenv/libexec:/usr/local/opt/rbenv/plugins/rvm-download/bin:/usr/local/opt/rbenv/plugins/ruby-build/bin:$PATH"
+export GEM_PATH="/home/nitrous/.gem/ruby/2.2.0:/usr/local/opt/rbenv/versions/2.2.1/lib/ruby/gems/2.2.0:/home/nitrous/code/rails_projects/ioton/gems"
+export GEM_HOME="/home/nitrous/code/rails_projects/ioton/gems"
