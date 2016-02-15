@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  node_message_id: 1
+  value_type_id: 1
+  value_length: 1
+  value_index: 1
+  downloaded: false
+
+two:
+  name: MyString
+  node_message_id: 1
+  value_type_id: 1
+  value_length: 1
+  value_index: 1
+  downloaded: false

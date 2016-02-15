@@ -17,8 +17,8 @@ class IotonserversController < ApplicationController
 	  @department = Department.find(session[:department_id])
     @site = Site.find(session[:site_id])
 
-    #session[:site_id] = @site.id
-    #redirect_to sites_path
+    session[:iotonserver_id] = @iotonserver.id
+    redirect_to nodes_path
   end
 
   # GET /iotonservers/new
@@ -45,14 +45,11 @@ class IotonserversController < ApplicationController
     @site = Site.find(session[:site_id])
     @iotonserver.downloaded = false
     @iotonserver.site_id = @site.id
-    respond_to do |format|
-      if @iotonserver.save
-        format.html { redirect_to @iotonserver, notice: 'Iotonserver was successfully created.' }
-        format.json { render :show, status: :created, location: @iotonserver }
-      else
-        format.html { render :new }
-        format.json { render json: @iotonserver.errors, status: :unprocessable_entity }
-      end
+    if @iotonserver.save
+      flash[:notice] = "Server was successfully created"
+      redirect_to iotonservers_path
+    else
+      render 'new'
     end
   end
 

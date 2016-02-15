@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Group rule:</strong>
+  <%= @group_rule_detail.group_rule_id %>
+</p>
+
+<p>
+  <strong>Rule:</strong>
+  <%= @group_rule_detail.rule_id %>
+</p>
+
+<p>
+  <strong>Downloaded:</strong>
+  <%= @group_rule_detail.downloaded %>
+</p>
+
+<%= link_to 'Edit', edit_group_rule_detail_path(@group_rule_detail) %> |
+<%= link_to 'Back', group_rule_details_path %>

@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Rule Types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Symbol</th>
+      <th>Downloaded</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rule_types.each do |rule_type| %>
+      <tr>
+        <td><%= rule_type.name %></td>
+        <td><%= rule_type.description %></td>
+        <td><%= rule_type.symbol %></td>
+        <td><%= rule_type.downloaded %></td>
+        <td><%= link_to 'Show', rule_type %></td>
+        <td><%= link_to 'Edit', edit_rule_type_path(rule_type) %></td>
+        <td><%= link_to 'Destroy', rule_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Rule type', new_rule_type_path %>

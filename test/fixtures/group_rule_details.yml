@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  group_rule_id: 1
+  rule_id: 1
+  downloaded: false
+
+two:
+  group_rule_id: 1
+  rule_id: 1
+  downloaded: false

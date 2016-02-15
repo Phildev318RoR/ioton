@@ -4,28 +4,50 @@ class NodesController < ApplicationController
   # GET /nodes
   # GET /nodes.json
   def index
+    @client = Client.find(session[:client_id])
+	  @department = Department.find(session[:department_id])
+    @site = Site.find(session[:site_id])
+    @iotonserver = Iotonserver.find(session[:iotonserver_id])
     @nodes = Node.all
   end
 
   # GET /nodes/1
   # GET /nodes/1.json
   def show
+    @client = Client.find(session[:client_id])
+	  @department = Department.find(session[:department_id])
+    @site = Site.find(session[:site_id])
+    @iotonserver = Iotonserver.find(session[:iotonserver_id])
   end
 
   # GET /nodes/new
   def new
+    @client = Client.find(session[:client_id])
+	  @department = Department.find(session[:department_id])
+    @site = Site.find(session[:site_id])
+    @iotonserver = Iotonserver.find(session[:iotonserver_id])
     @node = Node.new
+    @node_type = NodeType.all
   end
 
   # GET /nodes/1/edit
   def edit
+    @client = Client.find(session[:client_id])
+	  @department = Department.find(session[:department_id])
+    @site = Site.find(session[:site_id])
+    @iotonserver = Iotonserver.find(session[:iotonserver_id])
+    @node_types = Node_type.all
   end
 
   # POST /nodes
   # POST /nodes.json
   def create
     @node = Node.new(node_params)
-
+    @client = Client.find(session[:client_id])
+	  @department = Department.find(session[:department_id])
+    @site = Site.find(session[:site_id])
+    @iotonserver = Iotonserver.find(session[:iotonserver_id])
+    @node.downloaded = false
     respond_to do |format|
       if @node.save
         format.html { redirect_to @node, notice: 'Node was successfully created.' }
@@ -40,6 +62,11 @@ class NodesController < ApplicationController
   # PATCH/PUT /nodes/1
   # PATCH/PUT /nodes/1.json
   def update
+    @client = Client.find(session[:client_id])
+	  @department = Department.find(session[:department_id])
+    @site = Site.find(session[:site_id])
+    @iotonserver = Iotonserver.find(session[:iotonserver_id])
+    @node.downloaded = false
     respond_to do |format|
       if @node.update(node_params)
         format.html { redirect_to @node, notice: 'Node was successfully updated.' }

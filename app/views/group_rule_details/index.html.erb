@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Group Rule Details</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Group rule</th>
+      <th>Rule</th>
+      <th>Downloaded</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @group_rule_details.each do |group_rule_detail| %>
+      <tr>
+        <td><%= group_rule_detail.group_rule_id %></td>
+        <td><%= group_rule_detail.rule_id %></td>
+        <td><%= group_rule_detail.downloaded %></td>
+        <td><%= link_to 'Show', group_rule_detail %></td>
+        <td><%= link_to 'Edit', edit_group_rule_detail_path(group_rule_detail) %></td>
+        <td><%= link_to 'Destroy', group_rule_detail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Group rule detail', new_group_rule_detail_path %>

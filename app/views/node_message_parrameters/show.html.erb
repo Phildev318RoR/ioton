@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @node_message_parrameter.name %>
+</p>
+
+<p>
+  <strong>Node message:</strong>
+  <%= @node_message_parrameter.node_message_id %>
+</p>
+
+<p>
+  <strong>Value type:</strong>
+  <%= @node_message_parrameter.value_type_id %>
+</p>
+
+<p>
+  <strong>Value length:</strong>
+  <%= @node_message_parrameter.value_length %>
+</p>
+
+<p>
+  <strong>Value index:</strong>
+  <%= @node_message_parrameter.value_index %>
+</p>
+
+<p>
+  <strong>Downloaded:</strong>
+  <%= @node_message_parrameter.downloaded %>
+</p>
+
+<%= link_to 'Edit', edit_node_message_parrameter_path(@node_message_parrameter) %> |
+<%= link_to 'Back', node_message_parrameters_path %>

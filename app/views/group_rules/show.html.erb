@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @group_rule.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @group_rule.description %>
+</p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @group_rule.client_id %>
+</p>
+
+<p>
+  <strong>Rule type:</strong>
+  <%= @group_rule.rule_type_id %>
+</p>
+
+<p>
+  <strong>Rule value:</strong>
+  <%= @group_rule.rule_value %>
+</p>
+
+<p>
+  <strong>Downloaded:</strong>
+  <%= @group_rule.downloaded %>
+</p>
+
+<%= link_to 'Edit', edit_group_rule_path(@group_rule) %> |
+<%= link_to 'Back', group_rules_path %>

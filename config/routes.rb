@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  resources :group_rules
+  resources :group_rule_details
+  resources :rules
+  resources :rule_types
+  resources :node_messages
+  resources :node_message_parrameters
+  resources :value_types
+  resources :node_message_types
   resources :node_types
   resources :nodes
   resources :iotonservers

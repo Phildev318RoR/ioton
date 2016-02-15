@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyString
+  node_message_parrameter_id: 1
+  rule_type_id: 1
+  rule_value: MyString
+  downloaded: false
+
+two:
+  name: MyString
+  description: MyString
+  node_message_parrameter_id: 1
+  rule_type_id: 1
+  rule_value: MyString
+  downloaded: false

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @node_message.name %>
+</p>
+
+<p>
+  <strong>Node type:</strong>
+  <%= @node_message.node_type_id %>
+</p>
+
+<p>
+  <strong>Node message type:</strong>
+  <%= @node_message.node_message_type_id %>
+</p>
+
+<p>
+  <strong>Downloaded:</strong>
+  <%= @node_message.downloaded %>
+</p>
+
+<%= link_to 'Edit', edit_node_message_path(@node_message) %> |
+<%= link_to 'Back', node_messages_path %>

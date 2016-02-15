@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Node Message Types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Downloaded</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @node_message_types.each do |node_message_type| %>
+      <tr>
+        <td><%= node_message_type.name %></td>
+        <td><%= node_message_type.description %></td>
+        <td><%= node_message_type.downloaded %></td>
+        <td><%= link_to 'Show', node_message_type %></td>
+        <td><%= link_to 'Edit', edit_node_message_type_path(node_message_type) %></td>
+        <td><%= link_to 'Destroy', node_message_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Node message type', new_node_message_type_path %>

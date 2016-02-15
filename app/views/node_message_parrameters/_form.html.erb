@@ -1,0 +1,41 @@
+<%= form_for(@node_message_parrameter) do |f| %>
+  <% if @node_message_parrameter.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@node_message_parrameter.errors.count, "error") %> prohibited this node_message_parrameter from being saved:</h2>
+
+      <ul>
+      <% @node_message_parrameter.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :node_message_id %><br>
+    <%= f.number_field :node_message_id %>
+  </div>
+  <div class="field">
+    <%= f.label :value_type_id %><br>
+    <%= f.number_field :value_type_id %>
+  </div>
+  <div class="field">
+    <%= f.label :value_length %><br>
+    <%= f.number_field :value_length %>
+  </div>
+  <div class="field">
+    <%= f.label :value_index %><br>
+    <%= f.number_field :value_index %>
+  </div>
+  <div class="field">
+    <%= f.label :downloaded %><br>
+    <%= f.check_box :downloaded %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

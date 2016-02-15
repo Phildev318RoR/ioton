@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @rule_type.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @rule_type.description %>
+</p>
+
+<p>
+  <strong>Symbol:</strong>
+  <%= @rule_type.symbol %>
+</p>
+
+<p>
+  <strong>Downloaded:</strong>
+  <%= @rule_type.downloaded %>
+</p>
+
+<%= link_to 'Edit', edit_rule_type_path(@rule_type) %> |
+<%= link_to 'Back', rule_types_path %>

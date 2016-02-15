@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160204101615) do
+ActiveRecord::Schema.define(version: 20160204110352) do
 
   create_table "clients", force: :cascade do |t|
     t.string   "name"
@@ -145,8 +145,17 @@ ActiveRecord::Schema.define(version: 20160204101615) do
     t.string   "name"
     t.string   "description"
     t.boolean  "downloaded"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "nodes", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "node_type_id"
+    t.integer  "iotonserver_id"
+    t.boolean  "downloaded"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "people", force: :cascade do |t|
@@ -211,9 +220,6 @@ ActiveRecord::Schema.define(version: 20160204101615) do
     t.integer  "department_id"
   end
 
-  create_table "tests", force: :cascade do |t|
-  end
-
   create_table "userroles", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "role_id"
@@ -222,12 +228,12 @@ ActiveRecord::Schema.define(version: 20160204101615) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "api_key"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.string   "password_digest"
     t.string   "username"
     t.string   "email"
+    t.string   "api_key"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "password_digest"
   end
 
   create_table "value_types", force: :cascade do |t|
